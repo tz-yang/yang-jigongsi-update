@@ -1,0 +1,10 @@
+{
+  "templates": [
+    {
+      "id": "road-duty",
+      "name": "示例模板",
+      "desc": "用于演示个功能的使用示例，请根据自身需求进行设置。",
+      "file": "road-duty.json"
+    }
+  ]
+}
