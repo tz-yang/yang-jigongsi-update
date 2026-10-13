@@ -34,12 +34,12 @@
             "mode": "rules",
             "rules": [
               {
-                "conditions": "下班时间 > 18:00\n晚上休息 == \"\"",
+                "conditions": "下班时间 > 18:00\n晚休 == \"\"",
                 "value": "0",
                 "editable": true
               },
               {
-                "conditions": "下班时间 <= 18:00\n晚上休息 != \"\"",
+                "conditions": "下班时间 <= 18:00\n晚休 != \"\"",
                 "value": "空"
               }
             ]
