@@ -4,7 +4,6 @@
     "currency": "元",
     "noonBreak": 0,
     "eveningBreak": 0,
-    "recordMode": "advanced",
     "smartSubsidies": [
       {
         "id": "1787228610736_mig_1",
@@ -42,7 +41,24 @@
                 "conditions": "下班时间 <= 18:00\n晚休 != \"\"",
                 "value": "空",
                 "hidden": true,
-                "editable": false
+                "editable": false,
+                "readonly": false
+              }
+            ]
+          },
+          "noonBreak": {
+            "mode": "rules",
+            "rules": [
+              {
+                "conditions": "上班时间 >= 12:00\n午休 != \"\"",
+                "value": "空",
+                "readonly": false,
+                "hidden": true
+              },
+              {
+                "conditions": "上班时间 < 12:00\n午休 == \"\"",
+                "value": "0",
+                "readonly": false
               }
             ]
           }
@@ -60,19 +76,27 @@
           },
           "startTime": {
             "mode": "fixed",
-            "value": "空"
+            "value": "空",
+            "hidden": true,
+            "readonly": false
           },
           "endTime": {
             "mode": "fixed",
-            "value": "空"
+            "value": "空",
+            "hidden": true,
+            "readonly": false
           },
           "noonBreak": {
             "mode": "fixed",
-            "value": "空"
+            "value": "空",
+            "hidden": true,
+            "readonly": false
           },
           "eveningBreak": {
             "mode": "fixed",
-            "value": "空"
+            "value": "空",
+            "hidden": true,
+            "readonly": false
           }
         },
         "applyOnEdit": true
@@ -86,36 +110,43 @@
             "mode": "fixed",
             "value": "空",
             "editable": false,
-            "hidden": true
+            "hidden": true,
+            "readonly": false
           },
           "endTime": {
             "mode": "fixed",
             "value": "空",
             "editable": false,
-            "hidden": true
+            "hidden": true,
+            "readonly": false
           },
           "noonBreak": {
             "mode": "fixed",
             "value": "空",
             "editable": false,
-            "hidden": true
+            "hidden": true,
+            "readonly": false
           },
           "eveningBreak": {
             "mode": "fixed",
             "value": "空",
             "editable": false,
-            "hidden": true
+            "hidden": true,
+            "readonly": false
           },
           "hours": {
             "mode": "fixed",
             "value": "0",
-            "editable": false
+            "editable": false,
+            "hidden": true,
+            "readonly": false
           },
           "noteTemplate": {
             "mode": "fixed",
             "value": "休息",
             "editable": false,
-            "hidden": true
+            "hidden": false,
+            "readonly": true
           }
         }
       }
@@ -131,6 +162,35 @@
       }
     ],
     "noteTemplate": "{日期} 工作{工时}小时",
+    "tags": [
+      {
+        "name": "休息"
+      },
+      {
+        "name": "合肥力捷"
+      },
+      {
+        "name": "日新高温"
+      },
+      {
+        "name": "力捷(美的暖通)"
+      },
+      {
+        "name": "骏图（派能）"
+      },
+      {
+        "name": "骏图车间"
+      },
+      {
+        "name": "骏图（阳光电源）"
+      },
+      {
+        "name": "美的暖通"
+      },
+      {
+        "name": "鑫思诚"
+      }
+    ],
     "monthlyTemplates": [
       {
         "id": "1782800202927",
@@ -157,10 +217,10 @@
         "autoGenerate": true
       }
     ],
-    "gradColor1": "#4150b3",
-    "gradColor2": "#5dff56",
-    "gradColor3": "#fff73e",
-    "gradSpan": 51,
+    "gradColor1": "#9377de",
+    "gradColor2": "#dfffde",
+    "gradColor3": "#fffdd0",
+    "gradSpan": 68,
     "gradAngle": 180,
     "gradScopeModal": true,
     "gradScopeGlobal": true,
@@ -170,9 +230,10 @@
     "luqinColor": "#0021c8",
     "hideEarnings": true,
     "immersiveMode": true,
+    "recordSortDesc": true,
     "autoShareAfterAdd": true,
     "autoReadClipboard": true
   },
-  "backupDate": "2026-10-15T13:08:46.244Z",
+  "backupDate": "2026-10-15T23:11:29.629Z",
   "version": "2.0.0"
 }
