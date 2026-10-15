@@ -162,35 +162,6 @@
       }
     ],
     "noteTemplate": "{日期} 工作{工时}小时",
-    "tags": [
-      {
-        "name": "休息"
-      },
-      {
-        "name": "合肥力捷"
-      },
-      {
-        "name": "日新高温"
-      },
-      {
-        "name": "力捷(美的暖通)"
-      },
-      {
-        "name": "骏图（派能）"
-      },
-      {
-        "name": "骏图车间"
-      },
-      {
-        "name": "骏图（阳光电源）"
-      },
-      {
-        "name": "美的暖通"
-      },
-      {
-        "name": "鑫思诚"
-      }
-    ],
     "monthlyTemplates": [
       {
         "id": "1782800202927",
@@ -229,11 +200,10 @@
     "showRestInDetails": true,
     "luqinColor": "#0021c8",
     "hideEarnings": true,
-    "immersiveMode": true,
     "recordSortDesc": true,
     "autoShareAfterAdd": true,
     "autoReadClipboard": true
   },
-  "backupDate": "2026-10-15T23:11:29.629Z",
+  "backupDate": "2026-10-15T23:18:52.683Z",
   "version": "2.0.0"
 }
