@@ -1,0 +1,178 @@
+{
+  "type": "config",
+  "settings": {
+    "currency": "元",
+    "noonBreak": 0,
+    "eveningBreak": 0,
+    "recordMode": "advanced",
+    "smartSubsidies": [
+      {
+        "id": "1787228610736_mig_1",
+        "name": "餐补",
+        "conditions": "工时 >= 8\n备注 不包含 \"路勤\"",
+        "amount": 30
+      },
+      {
+        "id": "1787228610736_mig_0",
+        "name": "餐补",
+        "conditions": "工时 >= 4\n工时 < 8\n备注 不包含 \"路勤\"",
+        "amount": 15
+      }
+    ],
+    "contextPresets": [
+      {
+        "id": "migrated_1782656926038",
+        "name": "正常班",
+        "conditions": "工时 > 0\n备注 不包含 \"路勤\"\n标签 != \"休息\"",
+        "fields": {
+          "noteTemplate": {
+            "mode": "fixed",
+            "value": "{姓名} {日期} {标签} {时段} {中午} {晚上} 共{工时}小时",
+            "editable": true
+          },
+          "eveningBreak": {
+            "mode": "rules",
+            "rules": [
+              {
+                "conditions": "下班时间 > 18:00\n晚休 == \"\"",
+                "value": "0",
+                "editable": true
+              },
+              {
+                "conditions": "下班时间 <= 18:00\n晚休 != \"\"",
+                "value": "空",
+                "hidden": true,
+                "editable": false
+              }
+            ]
+          }
+        },
+        "applyOnEdit": true
+      },
+      {
+        "id": "migrated_1782657068977",
+        "name": "路勤",
+        "conditions": "备注 包含 \"路勤\"\n标签 != \"休息\"\n",
+        "fields": {
+          "noteTemplate": {
+            "mode": "fixed",
+            "value": "{姓名} {日期} {标签} {备注} {工时}小时"
+          },
+          "startTime": {
+            "mode": "fixed",
+            "value": "空"
+          },
+          "endTime": {
+            "mode": "fixed",
+            "value": "空"
+          },
+          "noonBreak": {
+            "mode": "fixed",
+            "value": "空"
+          },
+          "eveningBreak": {
+            "mode": "fixed",
+            "value": "空"
+          }
+        },
+        "applyOnEdit": true
+      },
+      {
+        "id": "1790687666787",
+        "name": "休息",
+        "conditions": "标签 == \"休息\"",
+        "fields": {
+          "startTime": {
+            "mode": "fixed",
+            "value": "空",
+            "editable": false,
+            "hidden": true
+          },
+          "endTime": {
+            "mode": "fixed",
+            "value": "空",
+            "editable": false,
+            "hidden": true
+          },
+          "noonBreak": {
+            "mode": "fixed",
+            "value": "空",
+            "editable": false,
+            "hidden": true
+          },
+          "eveningBreak": {
+            "mode": "fixed",
+            "value": "空",
+            "editable": false,
+            "hidden": true
+          },
+          "hours": {
+            "mode": "fixed",
+            "value": "0",
+            "editable": false
+          },
+          "noteTemplate": {
+            "mode": "fixed",
+            "value": "休息",
+            "editable": false,
+            "hidden": true
+          }
+        }
+      }
+    ],
+    "customVariables": [
+      {
+        "name": "中午",
+        "value": "{午休==\"\"?:午休>0?中午吃饭{午休}小时:中午连班}"
+      },
+      {
+        "name": "晚上",
+        "value": "{晚休==\"\"?:晚休>0?晚上吃饭{晚休}小时:晚上连班}"
+      }
+    ],
+    "noteTemplate": "{日期} 工作{工时}小时",
+    "monthlyTemplates": [
+      {
+        "id": "1782800202927",
+        "type": "deduction",
+        "amount": 75,
+        "note": "",
+        "name": "保险费",
+        "autoGenerate": true
+      },
+      {
+        "id": "1782800217011",
+        "type": "deduction",
+        "amount": 75,
+        "note": "",
+        "name": "水电费",
+        "autoGenerate": true
+      },
+      {
+        "id": "1787612402111",
+        "type": "deduction",
+        "amount": 0,
+        "note": "",
+        "name": "个税",
+        "autoGenerate": true
+      }
+    ],
+    "gradColor1": "#4150b3",
+    "gradColor2": "#5dff56",
+    "gradColor3": "#fff73e",
+    "gradSpan": 51,
+    "gradAngle": 180,
+    "gradScopeModal": true,
+    "gradScopeGlobal": true,
+    "restDayColor": "#007d00",
+    "restDayLabel": "休息",
+    "showRestInDetails": true,
+    "luqinColor": "#0021c8",
+    "hideEarnings": true,
+    "immersiveMode": true,
+    "autoShareAfterAdd": true,
+    "autoReadClipboard": true
+  },
+  "backupDate": "2026-10-15T13:08:46.244Z",
+  "version": "2.0.0"
+}
