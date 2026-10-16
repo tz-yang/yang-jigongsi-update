@@ -28,7 +28,7 @@
           "noteTemplate": {
             "mode": "fixed",
             "value": "{姓名} {日期} {标签} {时段} {中午} {晚上} 共{工时}小时",
-            "editable": true
+            "readonly": false
           },
           "eveningBreak": {
             "mode": "rules",
@@ -36,11 +36,29 @@
               {
                 "conditions": "下班时间 > 18:00\n晚休 == \"\"",
                 "value": "0",
-                "editable": true
+                "readonly": false
               },
               {
                 "conditions": "下班时间 <= 18:00\n晚休 != \"\"",
-                "value": "空"
+                "value": "空",
+                "hidden": true,
+                "readonly": false
+              }
+            ]
+          },
+          "noonBreak": {
+            "mode": "rules",
+            "rules": [
+              {
+                "conditions": "上班时间 >= 12:00\n午休 != \"\"",
+                "value": "空",
+                "readonly": false,
+                "hidden": true
+              },
+              {
+                "conditions": "上班时间 < 12:00\n午休 == \"\"",
+                "value": "0",
+                "readonly": false
               }
             ]
           }
@@ -58,19 +76,27 @@
           },
           "startTime": {
             "mode": "fixed",
-            "value": "空"
+            "value": "空",
+            "hidden": true,
+            "readonly": false
           },
           "endTime": {
             "mode": "fixed",
-            "value": "空"
+            "value": "空",
+            "hidden": true,
+            "readonly": false
           },
           "noonBreak": {
             "mode": "fixed",
-            "value": "空"
+            "value": "空",
+            "hidden": true,
+            "readonly": false
           },
           "eveningBreak": {
             "mode": "fixed",
-            "value": "空"
+            "value": "空",
+            "hidden": true,
+            "readonly": false
           }
         },
         "applyOnEdit": true
@@ -83,32 +109,38 @@
           "startTime": {
             "mode": "fixed",
             "value": "空",
-            "editable": true
+            "hidden": true,
+            "readonly": false
           },
           "endTime": {
             "mode": "fixed",
             "value": "空",
-            "editable": true
+            "hidden": true,
+            "readonly": false
           },
           "noonBreak": {
             "mode": "fixed",
             "value": "空",
-            "editable": true
+            "hidden": true,
+            "readonly": false
           },
           "eveningBreak": {
             "mode": "fixed",
             "value": "空",
-            "editable": true
+            "hidden": true,
+            "readonly": false
           },
           "hours": {
             "mode": "fixed",
             "value": "0",
-            "editable": false
+            "hidden": true,
+            "readonly": false
           },
           "noteTemplate": {
             "mode": "fixed",
             "value": "休息",
-            "editable": true
+            "hidden": false,
+            "readonly": true
           }
         }
       }
@@ -124,11 +156,6 @@
       }
     ],
     "noteTemplate": "{日期} 工作{工时}小时",
-    "tags": [
-      {
-        "name": "休息"
-      }
-    ],
     "monthlyTemplates": [
       {
         "id": "1782800202927",
@@ -155,17 +182,17 @@
         "autoGenerate": true
       }
     ],
-    "gradColor1": "#8d92b3",
-    "gradColor2": "#d3ffd1",
-    "gradColor3": "#fffdd1",
-    "gradSpan": 51,
+    "gradColor1": "#9377de",
+    "gradColor2": "#dfffde",
+    "gradColor3": "#fffdd0",
+    "gradSpan": 68,
     "gradAngle": 180,
     "gradScopeModal": true,
     "gradScopeGlobal": true,
-    "restDayColor": "#00b000",
+    "restDayColor": "#007d00",
     "restDayLabel": "休息",
     "showRestInDetails": true,
-    "luqinColor": "#ff00ff",
+    "luqinColor": "#0021c8",
     "hideEarnings": true,
     "immersiveMode": true,
     "recordSortDesc": true,
@@ -177,6 +204,9 @@
       30
     ]
   },
-  "backupDate": "2026-10-11T02:50:29.065Z",
-  "version": "2.0.0"
+  "backupDate": "2026-10-16T12:42:57.648Z",
+  "version": "2.0.0",
+  "itemMergedFields": [
+    "smartSubsidies"
+  ]
 }
